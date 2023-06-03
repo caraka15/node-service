@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8" />
+    <title><?php echo $name ?> </title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />

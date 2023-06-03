@@ -36,6 +36,7 @@ mysqli_close($db);
 <head>
     <link rel="stylesheet" type="text/css" href="css/login.css">
     <title>Admin Login</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 
 <body>
