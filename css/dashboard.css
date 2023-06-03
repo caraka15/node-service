@@ -1,0 +1,103 @@
+:root {
+  --primary-color: #ff5722;
+  --secondary-color: #eeeeee;
+  --accent-color: #2d4059;
+  --dark-color: #21344d;
+}
+
+body {
+  background-color: var(--secondary-color);
+  color: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+h1,
+h2 {
+  color: var(--secondary-color);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.table-fixed {
+  table-layout: fixed;
+}
+
+.table-fixed td,
+.table-fixed th {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.table-fixed th {
+  background-color: var(--accent-color);
+  color: #ffffff;
+}
+
+.table-fixed th,
+.table-fixed td {
+  padding: 5px;
+  border: 1px solid var(--accent-color);
+  color: var(--secondary-color);
+}
+
+.table-fixed td:hover {
+  overflow: visible;
+  white-space: normal;
+  z-index: 1;
+  position: relative;
+}
+
+.daftar-chaind-container,
+.add-chaind-container,
+.edit-chaind-container {
+  background-color: var(--primary-color);
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--dark-color);
+}
+
+form input[type="text"],
+form input[type="file"] {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid var(--secondary-color);
+}
+
+form input[type="submit"] {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.form-group label {
+  color: #eeeeee;
+}
+
+.add-chaind-container button:hover {
+  transform: none;
+}
