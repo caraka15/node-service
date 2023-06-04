@@ -1,5 +1,5 @@
 # Ignore folder "logo"
-logo/
+database/logo/
 
 # Ignore folder "guide"
-guide/
+database/guide/

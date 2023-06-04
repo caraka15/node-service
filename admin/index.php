@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (password_verify($password, $hashed_password)) {
         $_SESSION['user'] = $user;
-        header('Location: admin_dashboard.php');
+        header('Location: ../dashboard');
         exit();
     } else {
         $login_error = "Password salah";
@@ -30,22 +30,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 mysqli_close($db);
 ?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="../component/css/login.css">
     <title>Admin Login</title>
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../component/images/favicon.ico">
+    <script>
+    // Menghilangkan pesan "Password salah" setelah 10 detik
+    setTimeout(() => {
+        var loginError = document.getElementById("login-error");
+        if (loginError) {
+            loginError.style.display = "none";
+        }
+    }, 10000);
+    </script>
 </head>
 
 <body>
-    <?php if (isset($login_error)) { ?>
-    <p><?php echo $login_error; ?></p>
-    <?php } ?>
     <div class="screen-1">
-        <img class="logo" src="images/logo.png" alt="Logo">
-        <form method="POST" action="admin.php">
+        <img class="logo" src="../component/images/logo.png" alt="Logo">
+        <?php if (isset($login_error)) { ?>
+        <h2 id="login-error"><?php echo $login_error; ?></h2>
+        <?php } ?>
+        <form method="POST" action="index.php">
             <div class="email">
                 <label for="email">Email Address</label>
                 <div class="sec-2">

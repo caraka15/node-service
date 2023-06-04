@@ -317,6 +317,7 @@ i {
   z-index: 1;
   text-align: center;
   transition: transform 0.3s;
+  text-transform: uppercase;
 }
 
 .card-content::before {

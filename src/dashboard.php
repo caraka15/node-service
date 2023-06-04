@@ -3,11 +3,11 @@ session_start();
 
 // Cek apakah user sudah login
 if (!isset($_SESSION['user'])) {
-    header('Location: admin.php');
+    header('Location: ../admin');
     exit();
 }
 
-require_once('api/db.php');
+require_once('../component/api/db.php');
 
 // Fungsi untuk menghapus data chaind
 function deleteChaind($chain_id) {
@@ -68,10 +68,10 @@ if (isset($_POST['edit_chaind'])) {
     $logo_file = $_FILES['logo'];
 
     // Upload file guide
-    $guideFileName = uploadFile($guide_file, 'guide/');
+    $guideFileName = uploadFile($guide_file, '../database/guide/');
 
     // Upload file logo
-    $logoFileName = uploadFile($logo_file, 'logo/');
+    $logoFileName = uploadFile($logo_file, '../database/logo/');
 
     if ($guideFileName !== false && $logoFileName !== false) {
         // Memperbarui data chaind ke database dengan guide_link dan logo yang sudah diperbarui
@@ -105,10 +105,10 @@ if (isset($_POST['add_chaind'])) {
     $logo_file = $_FILES['logo'];
 
     // Upload file guide
-    $guideFileName = uploadFile($guide_file, 'guide/');
+    $guideFileName = uploadFile($guide_file, '../database/guide/');
 
     // Upload file logo
-    $logoFileName = uploadFile($logo_file, 'logo/');
+    $logoFileName = uploadFile($logo_file, '../database/logo/');
 
     if ($guideFileName !== false && $logoFileName !== false) {
         // Menambahkan data chaind ke database dengan guide_link dan logo yang sudah diperbarui

@@ -24,10 +24,16 @@ body {
   box-shadow: 0 0 1em #e6e9f9;
   gap: 2em;
 }
+.screen-1 h2 {
+  color: red;
+  text-align: center;
+  size: 12px;
+  margin-top: -30px;
+}
 
 .screen-1 .logo {
   width: 150px;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   padding-top: 0px;
   padding-left: 30px;
   padding-right: 30px;

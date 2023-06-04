@@ -1,4 +1,4 @@
-<?php require_once('src/dashboard.php') ?>
+<?php include '../src/dashboard.php' ?>
 
 <!DOCTYPE html>
 <html>
@@ -8,14 +8,14 @@
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-    <link rel="stylesheet" href="css/dashboard.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../component/css/dashboard.css">
+    <link rel="stylesheet" href="../component/css/style.css">
 
 
 </head>
 
 <body>
-    <?php include 'includes/navbar_dashboard.html' ?>
+    <?php include '../component/includes/navbar_dashboard.html' ?>
 
     <div class="container">
         <h1>Admin Dashboard</h1>
@@ -47,7 +47,7 @@
                         <td><?php echo $row['chain_id']; ?></td>
                         <td><?php echo $row['name']; ?></td>
                         <td><?php echo $row['type']; ?></td>
-                        <td><img src="logo/<?php echo $row['logo']; ?>" width="50"></td>
+                        <td><img src="../database/logo/<?php echo $row['logo']; ?>" width="50"></td>
                         <td><?php echo $row['rpc_link']; ?></td>
                         <td><?php echo $row['api_link']; ?></td>
                         <td><?php echo $row['grpc_link']; ?></td>
@@ -60,7 +60,7 @@
                         <td><?php echo $row['snapshot_link']; ?></td>
                         <td><?php echo $row['statesync_link']; ?></td>
                         <td>
-                            <form method="POST" action="admin_dashboard.php">
+                            <form method="POST" action="index.php">
                                 <input type="hidden" name="chain_id" value="<?php echo $row['chain_id']; ?>">
                                 <button type="submit" name="delete_chaind" class="btn-danger btn-sm"><i
                                         class="fa fa-trash"></i>Hapus
@@ -78,7 +78,7 @@
         </div>
         <div class="add-chaind-container">
             <h2>Tambah Chaind</h2>
-            <form method="POST" action="admin_dashboard.php" enctype="multipart/form-data">
+            <form method="POST" action="index.php" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="chain_id">Chain ID:</label>
                     <input type="text" name="chain_id" required class="form-control">
@@ -134,7 +134,7 @@
         </div>
         <div class="edit-chaind-container">
             <h2>Edit Chaind</h2>
-            <form method="POST" action="admin_dashboard.php" enctype="multipart/form-data">
+            <form method="POST" action="index.php" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="chain_id">Chain ID:</label>
                     <input type="text" name="chain_id" required class="form-control">
@@ -186,7 +186,7 @@
         </div>
     </div>
 
-    <?php include 'includes/footer.php' ?>
+    <?php include '../../component/includes/footer.php' ?>
 
 </body>
 

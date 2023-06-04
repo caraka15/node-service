@@ -1,5 +1,5 @@
 <?php
-                    include 'api/db.php';
+                    include 'component/api/db.php';
 
                     // Mengambil data chaind dari tabel
                     $query = "SELECT * FROM chainds WHERE type = 'testnet'";
@@ -24,7 +24,7 @@
                                 // Menampilkan data chaind aktif
                                 echo "<div class='card'>
                                         <div class='card-content'>
-                                            <img src='logo/$logo' alt='$name' class='round-image'>
+                                            <img src='database/logo/$logo' alt='$name' class='round-image'>
                                             <h2>$name</h2>
                                             <a href='{$stake_link}' class='btn btn-primary' target='_blank'>STAKE </a>
                                             <form action='install.php' method='post' target='_blank'>
@@ -40,7 +40,7 @@
                                 // Menampilkan data chaind tidak aktif
                                 echo "<div class='card'>
                                         <div class='card-content'>
-                                            <img src='logo/$logo' alt='$name' class='round-image'>
+                                            <img src='database/logo/$logo' alt='$name' class='round-image'>
                                             <h2>$name</h2>
                                             <a href='{$stake_link}' class='btn btn-primary' target='_blank'>STAKE </a>
                                             <form action='install.php' method='post' target='_blank'>
