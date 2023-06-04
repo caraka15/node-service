@@ -19,6 +19,7 @@
         font-family: Arial, sans-serif;
     }
 
+    .chart-container,
     .container {
         max-width: 800px;
         margin: 0 auto;
@@ -26,6 +27,17 @@
         border-radius: 5px;
         padding: 20px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .chart-container {
+        height: 360px;
+    }
+
+    @media (max-width: 480px) {
+        .container {
+            max-width: 100%;
+            padding: 10px;
+        }
     }
 
     .info {
@@ -147,12 +159,107 @@
         <div class="name"><?php echo $name; ?></div>
     </div>
 
+    <div class="widget">
+        <div class="chart-container">
+            <canvas id="chart"></canvas>
+        </div>
+    </div>
+
     <div class="container">
         <article id="markdownContent" class="markdown-body"></article>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const coinId = "<?php echo $name; ?>";
+        const days = 1;
+        const interval = "hour";
+
+        const chartContainer = document.querySelector(".chart-container");
+
+        getMarketChart(coinId, days, interval)
+            .then((data) => {
+                const prices = data.prices;
+                const labels = prices.map((price) =>
+                    new Date(price[0]).toLocaleDateString()
+                );
+                const values = prices.map((price) => price[1]);
+
+                const chartCanvas = document.getElementById("chart");
+                const chart = new Chart(chartCanvas, {
+                    type: "line",
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: "Price",
+                            data: values,
+                            backgroundColor: "rgba(255, 87, 34, 0.2)",
+                            borderColor: "rgba(255, 87, 34, 1)",
+                            borderWidth: 2,
+                            pointRadius: 0,
+                            tension: 0.4,
+                        }, ],
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false,
+                            },
+                        },
+                        scales: {
+                            x: {
+                                grid: {
+                                    display: false,
+                                },
+                                ticks: {
+                                    color: "#888",
+                                    font: {
+                                        size: 10,
+                                    },
+                                },
+                            },
+                            y: {
+                                grid: {
+                                    color: "#ddd",
+                                    borderDash: [3, 3],
+                                    lineWidth: 2,
+                                },
+                                ticks: {
+                                    color: "#888",
+                                    font: {
+                                        size: 10,
+                                    },
+                                    callback: function(value) {
+                                        return "$" + value.toFixed(2);
+                                    },
+                                },
+                            },
+                        },
+                    },
+                });
+            })
+            .catch((error) => {
+                console.log(error);
+                chartContainer.style.display = "none";
+            });
+
+        function getMarketChart(coinId, days, interval) {
+            const url =
+                `https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=usd&days=${days}&interval=${interval}`;
+            return fetch(url).then((response) => {
+                if (!response.ok) {
+                    throw new Error("Failed to fetch data from API");
+                }
+                return response.json();
+            });
+        }
+    });
+    </script>
     <script>
     // Ubah urlFile menjadi URL file Markdown yang ingin Anda tampilkan
     const urlFile = "<?php echo "guide/" . $guide_link; ?>";

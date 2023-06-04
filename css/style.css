@@ -206,6 +206,7 @@ i {
 }
 
 /* Chaind container styles */
+
 .container {
   display: flex;
   flex-direction: column;
@@ -213,6 +214,7 @@ i {
   margin-top: 0px;
   margin-bottom: 80px;
 }
+
 .chaind {
   height: 80px;
 }
@@ -602,4 +604,15 @@ ul.social-footer2 li a {
   100% {
     box-shadow: 0 0 5px 0px red;
   }
+}
+
+/* style chart */
+
+.chart {
+  height: 300px;
+}
+
+.error-message {
+  font-size: 18px;
+  color: var(--dark-color);
 }
