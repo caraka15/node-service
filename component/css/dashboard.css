@@ -98,6 +98,17 @@ a {
   color: #eeeeee;
 }
 
+.edit-chaind-container button,
+.add-chaind-container button {
+  color: #eeeeee;
+  background-color: #21344d;
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.edit-chaind-container button:hover,
 .add-chaind-container button:hover {
-  transform: none;
+  color: rgb(255, 255, 255);
+  background: #2d4059;
 }

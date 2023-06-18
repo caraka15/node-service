@@ -134,7 +134,7 @@
                     <label for="statesync_link">Statesync Link:</label>
                     <input type="text" name="statesync_link" required class="form-control">
                 </div>
-                <button type="submit" name="add_chaind" class="btn btn-primary">
+                <button type="submit" name="add_chaind">
                     <i class="fas fa-plus"></i> Add
                 </button>
             </form>
