@@ -22,7 +22,7 @@
                 <a class="nav-link" href="admin"><i class="fa-solid fa-user-secret"></i>Admin</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="https://explorer.crxa.my.id"><i class="fa fa-glasses"></i>Explorer</a>
+                <a class="nav-link" href="https://exp.crxa.my.id"><i class="fa fa-glasses"></i>Explorer</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#footer"><i class="far fa-solid fa-circle-info"></i>Footer</a>
