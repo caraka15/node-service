@@ -5,6 +5,11 @@
     <meta charset="UTF-8" />
     <title>Crxa Nodes Service</title>
     <link rel="icon" type="image/x-icon" href="component/images/favicon.ico">
+    <meta name="description" content="CRXA NODES is a premier individual enterprise dedicated to providing exceptional node and
+                            validator services across various networks, with a primary focus on the thriving Cosmos
+                            ecosystem. With an unwavering commitment to excellence, we have established ourselves as a
+                            trusted partner for network participants, offering reliable infrastructure and comprehensive
+                            support to ensure optimal performance, security, and growth">
     <meta charset="UTF-8" />
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
