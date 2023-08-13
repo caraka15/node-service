@@ -34,13 +34,11 @@
     <!-- partial:index.partial.html -->
     <?php include 'component/includes/header.php' ?>
 
-    <div class="container mt-5">
-        <!-- Pop-Up Banner -->
-        <div class="popup-banner">
-            <p>Ini adalah banner pop-up dengan informasi penting.</p>
-            <button id="openPopup">Lihat Detail</button>
-        </div>
-    </div>
+    <a class="banner" href="token.php"
+        target="_blank">
+        <p>Klik di sini untuk melihat detail</p>
+    </a>
+
     <div class="container mt-5">
         <div id="mainnet" class="chaind">
         </div>
