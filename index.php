@@ -40,7 +40,7 @@
             <p>Ini adalah banner pop-up dengan informasi penting.</p>
             <button id="openPopup">Lihat Detail</button>
         </div>
-</div>
+    </div>
     <div class="container mt-5">
         <div id="mainnet" class="chaind">
         </div>
