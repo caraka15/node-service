@@ -35,6 +35,13 @@
     <?php include 'component/includes/header.php' ?>
 
     <div class="container mt-5">
+        <!-- Pop-Up Banner -->
+        <div class="popup-banner">
+            <p>Ini adalah banner pop-up dengan informasi penting.</p>
+            <button id="openPopup">Lihat Detail</button>
+        </div>
+</div>
+    <div class="container mt-5">
         <div id="mainnet" class="chaind">
         </div>
         <div class="row">

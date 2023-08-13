@@ -379,7 +379,6 @@ i {
   animation: blinking-inactive 1s infinite;
 }
 
-
 /* Gaya pop-up */
 .popup-container {
   display: none;
@@ -399,6 +398,14 @@ i {
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
+.popup-banner {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 /*==================== 
   Footer 
 ====================== */
