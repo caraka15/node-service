@@ -25,7 +25,7 @@
                 <a class="nav-link" href="https://exp.crxa.my.id"><i class="fa fa-glasses"></i>Explorer</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#footer"><i class="far fa-solid fa-circle-info"></i>Footer</a>
+                <a class="nav-link" href="token,php"><i class="far fa-solid fa-circle-info"></i>Claim Token</a>
             </li>
         </ul>
     </div>
